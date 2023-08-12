@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Error from "./error";
+import Error from "./Error";
 
 //Generalment es fa ús de les arrow functions
 const Formulari = ({ pacients, setPacients, pacient, setPacient }) => {
