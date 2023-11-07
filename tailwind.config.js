@@ -1,9 +1,9 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  // A quins arxius vull tenir disponible Tailwind
-  content: ["index.html", "./src/**/*.jsx"],
+import withMT from '@material-tailwind/react/utils/withMT';
+
+export default withMT({
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {},
   },
   plugins: [],
-};
+});

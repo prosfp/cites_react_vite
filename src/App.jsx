@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Formulari from "./components/Formulari";
-import LlistatPacients from "./components/LlistatPacients";
+import { useState, useEffect } from 'react';
+import Header from './components/Header';
+import Formulari from './components/Formulari';
+import LlistatPacients from './components/LlistatPacients';
+import StickyNavbar from './components/NavBar';
 
 function App() {
   const [pacients, setPacients] = useState([]);
@@ -9,14 +10,14 @@ function App() {
 
   useEffect(() => {
     const obtenirLS = () => {
-      const pacientsLS = JSON.parse(localStorage.getItem("pacients")) ?? [];
+      const pacientsLS = JSON.parse(localStorage.getItem('pacients')) ?? [];
       setPacients(pacientsLS);
     };
     obtenirLS();
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("pacients", JSON.stringify(pacients));
+    localStorage.setItem('pacients', JSON.stringify(pacients));
   }, [pacients]);
 
   const eliminarPacient = (id) => {
@@ -32,6 +33,7 @@ function App() {
     //Dentro del return no puedo tener funciones, condicionales, bucles... solo antes se pueden definir
 
     <div className="container mx-auto mt-20">
+      <StickyNavbar />
       <Header />
       <div className="mt-12 md:flex">
         <Formulari
